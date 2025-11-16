@@ -83,3 +83,36 @@ const printBookDetails = (book: Book) => {
 //   isAvailable: true,
 // };
 // printBookDetails(myBook);
+
+type ArrayType = number[] | string[];
+const getUniqueValues = (arr1: ArrayType, arr2: ArrayType) => {
+  const unique = [];
+  for (let i = 0; i < arr1.length; i++) {
+    let exists = false;
+    for (let j = 0; j < unique.length; j++) {
+      if (arr1[i] === unique[j]) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) {
+      unique[unique.length] = arr1[i];
+    }
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    let exists = false;
+    for (let j = 0; j < unique.length; j++) {
+      if (arr2[i] === unique[j]) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) {
+      unique[unique.length] = arr2[i];
+    }
+  }
+  return unique;
+};
+// const array1: number[] = [1, 2, 3, 4, 5];
+// const array2: number[] = [3, 4, 5, 6, 7];
+// console.log(getUniqueValues(array1, array2));
