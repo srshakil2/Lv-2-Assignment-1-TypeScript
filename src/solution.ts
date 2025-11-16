@@ -51,3 +51,15 @@ const filterByRating = (items: Item[]): Item[] => {
 //   { title: "Book C", rating: 5.0 },
 // ];
 // console.log(filterByRating(books));
+
+type User = { id: number; name: string; email: string; isActive: boolean };
+const filterActiveUsers = (users: User[]): User[] => {
+  const filteredUsers = users.filter((user) => user.isActive);
+  return filteredUsers;
+};
+// const users = [
+//   { id: 1, name: "Rakib", email: "rakib@example.com", isActive: true },
+//   { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
+//   { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
+// ];
+// console.log(filterActiveUsers(users));
