@@ -63,3 +63,23 @@ const filterActiveUsers = (users: User[]): User[] => {
 //   { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
 // ];
 // console.log(filterActiveUsers(users));
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+const printBookDetails = (book: Book) => {
+  const availability = book.isAvailable ? "Yes" : "No";
+  return console.log(
+    `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`
+  );
+};
+// const myBook: Book = {
+//   title: "The Great Gatsby",
+//   author: "F. Scott Fitzgerald",
+//   publishedYear: 1925,
+//   isAvailable: true,
+// };
+// printBookDetails(myBook);
