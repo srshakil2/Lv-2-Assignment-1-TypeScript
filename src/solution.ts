@@ -8,9 +8,6 @@ const formatValue = (value: InputValue): InputValue => {
     return !value;
   }
 };
-console.log(formatValue("Hello"));
-console.log(formatValue(5));
-console.log(formatValue(true));
 
 type InputLength = string | number[];
 const getLength = (value: InputLength): number => {
@@ -21,8 +18,6 @@ const getLength = (value: InputLength): number => {
   }
   throw new Error("Please provide a valid input");
 };
-console.log(getLength("typescript"));
-console.log(getLength([10, 20, 30, 40]));
 
 class Person {
   name: string;
@@ -37,32 +32,18 @@ class Person {
 }
 const person1 = new Person("John Doe", 30);
 const person2 = new Person("Alice", 25);
-console.log(person1.getDetails());
-console.log(person2.getDetails());
 
 type Item = { title: string; rating: number };
 const filterByRating = (items: Item[]): Item[] => {
   const filteredItems = items.filter((item) => item.rating >= 4);
   return filteredItems;
 };
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
-];
-console.log(filterByRating(books));
 
 type User = { id: number; name: string; email: string; isActive: boolean };
 const filterActiveUsers = (users: User[]): User[] => {
   const filteredUsers = users.filter((user) => user.isActive);
   return filteredUsers;
 };
-const users = [
-  { id: 1, name: "Rakib", email: "rakib@example.com", isActive: true },
-  { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
-  { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
-];
-console.log(filterActiveUsers(users));
 
 interface Book {
   title: string;
@@ -70,19 +51,12 @@ interface Book {
   publishedYear: number;
   isAvailable: boolean;
 }
-const printBookDetails = (book: Book): void => {
+const printBookDetails = (book: Book) => {
   const availability = book.isAvailable ? "Yes" : "No";
   return console.log(
     `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`
   );
 };
-const myBook: Book = {
-  title: "The Great Gatsby",
-  author: "F. Scott Fitzgerald",
-  publishedYear: 1925,
-  isAvailable: true,
-};
-printBookDetails(myBook);
 
 type ArrayType = number[] | string[];
 const getUniqueValues = (arr1: ArrayType, arr2: ArrayType) => {
@@ -113,9 +87,6 @@ const getUniqueValues = (arr1: ArrayType, arr2: ArrayType) => {
   }
   return unique;
 };
-const array1: number[] = [1, 2, 3, 4, 5];
-const array2: number[] = [3, 4, 5, 6, 7];
-console.log(getUniqueValues(array1, array2));
 
 interface Product {
   name: string;
@@ -132,9 +103,3 @@ const calculateTotalPrice = (products: Product[]): number => {
   }, 0);
   return total;
 };
-const products = [
-  { name: "Pen", price: 10, quantity: 2 },
-  { name: "Notebook", price: 25, quantity: 3, discount: 10 },
-  { name: "Bag", price: 50, quantity: 1, discount: 20 },
-];
-console.log(calculateTotalPrice(products));
