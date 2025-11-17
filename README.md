@@ -37,8 +37,10 @@ keyof কোনো object type-এর সকল key-কে একটি union ty
 #### ✅ কেন ব্যবহার করা হয়?
 
 - Object-এর keys কে টাইপ হিসেবে পাওয়া
+- ভুল key ব্যবহার করা থেকে বাঁচায় (type safety)
 - Type-safe property access করা
-- Generic ফাংশনে dynamic key ব্যবহার করা
+- Generic ফাংশনে dynamic property access করা যায়
+- Object-এর কাঠামো পরিবর্তন হলে key-গুলোও স্বয়ংক্রিয়ভাবে আপডেট হয়
 
 #### ✅ উদাহরণ:
 
@@ -56,7 +58,10 @@ function getValue(obj: User, key: UserKeys) {
   return obj[key];
 }
 
-getValue({ name: "Robiul", age: 22, email: "r@gmail.com" }, "name");
+const user: User = { name: "Robiul", age: 22, email: "r@gmail.com" };
+
+console.log(getValue(user, "name"));
+console.log(getValue(user, "email"));
 ```
 
 ### 3. Explain the difference between any, unknown, and never types in TypeScript.
